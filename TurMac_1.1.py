@@ -6,13 +6,16 @@ Date Created: 2024/11/22
 Date last modified: 2024/11/22
 Python version: 3.13.0
 '''
+
+
+#Name: Number Counting Zig-Zag
+#Description: Writes increasing numbers back and forth between a pair of 8s. When it reaches 4, the program halts.
+
 #TAPE MEMORY is linear list, playheadPosition is the index of that list element.
-
-#Name: Binary Count-Up
-#Description: Iterates back and forth incrementing a binary number up by 1 with each pass. 
-
 TapeMem = [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8]
 playheadPosition = 1
+
+#CONTROL MEMORY is a 3 dimensional tuple array with instructions to direct the turing machine.
 ControlMem = (\
 ((0, 1, 1, 0), (8, 8, 0, 1), (2, 3, 1, 0), (4, 4, 0, 2)), \
 ((1, 2, 0, 1), (8, 8, 1, 0), (3, 4, 0, 1)), \
