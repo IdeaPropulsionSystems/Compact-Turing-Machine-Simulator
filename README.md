@@ -3,14 +3,16 @@ Abstract
 This Python script lets you program and play with your very own Turing Machines. It works well for very simple examples, and allows students to see their results immediately. The simulator, however, is vastly expandable: Using Python 3, there is actually no specific limit to the number of machine states, rules per state, or number of symbols in the alphabet. Your simulation is limited only by the physical system memory on your computer.
 How is the universal Turing Machine represented? Jump to an example on Pg.7, or keep reading for a more thorough explanation:
 This simulator represents a classic single-tape Turing Machine architecture with the following parts:
+
 1. Tape memory
 2. Control memory
 3. Control system
+
 Part 1. Tape memory
 The tape memory of a Turing Machine is analogous to the data memory in a modern computer. It is a volume of memory arranged in discreet positions, each with an address. Data representing ‘symbols’ can be read from each memory position, or may be written to each. In Python, the tape memory is represented as a simple list of elements:
 TapeMem = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 The example shows a 'tape' of 10 elements, and an alphabet of 10 symbols. Turing’s theoretical universal machine assumed a memory with an infinite number of elements, and an infinite number of symbols. Provided that your computer has enough memory, a list of this type can have nearly infinite element count. This simulator uses only integers as symbols, but since Python 3, there is no upward limit to the value of an integer either.
-  1
+
 The ’tape memory’ is accessed in a linear fashion by moving the ‘tape head’ to the LEFT or to the RIGHT by one position. For example, let’s say the head is located at tape position TapeMem[3]:
 TapeMem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ^
 HEAD
@@ -24,7 +26,7 @@ The control memory of a Turing Machine is analogous to the program memory of a m
  (state 0)
 (state 1)
 (state 2)
-2
+
 
 Each state can contain an arbitrary number of rules. If you could open up the states to see the rules inside, they might look like this:
 (state 0) -----opened----> ((rule 0), (rule 1), (rule 2))
@@ -42,7 +44,7 @@ The control system ‘understands’ (7,5,0,2) to mean:
 then over-write it with number 5 at current tape position, then move the tape head LEFT (0 means left, 1 means right), and finally, change the Turing Machine to STATE 2.”
 Another example translation of Turing Machine instruction elements is this:
 The rule (4,0,1,3) means, “If tape head reads 4, change it to 0, move tape head right, go to state 3.”
-3
+
 
 The above examples are simplified to show the concept of how the control memory is organized. In Python, this data structure can be written as a set of carefully nested lists or tuples, like this:
 ControlMem = (\
@@ -57,7 +59,7 @@ Note: The Python simulator uses integers as the symbols instruction elements. If
 (“X”, “N”, 0, 1) <---- don't mess with the last two elements' data types!
 This is because the python script is set up to recognize a 0 or 1 for head direction, and directly uses the
 last instruction number in the indexing process.
-4
+
 
 Part 3. Control system
 The control system of this Turing Machine simulator consists of a while loop that runs until a ‘halt condition’ is reached. The most basic halt condition built into this simulation is when the Turing machine enters a state that has zero instructions. The system recognizes that nothing further will happen (because there are no further instructions) and halts. There is also a built-in cycle counter in the Python code that lets you specify the maximum number of cycles the simulation is allowed to run. This is handy when running Turing machines that may never halt .
@@ -73,14 +75,14 @@ Each of the operations is informed by the instruction element found in the relev
 #STEP 02:Write new value to playhead according to control memory
 #STEP 03: move the playhead (L or R)
 #STEP 04: change the state according to the control memory
-5
+
  
 Putting it all together
 Traditionally, a Turing machine program is represented graphically in the form of a Turing Diagram. Here is an example Turing diagram for the example machine built into the simulation:
 This diagram shows a Turing Machine with three states (the colored bubbles numbered 0, 1, and 2). There are arrows attached to the various states. Each arrow can be though of as a conditional statement that leads away from a given state. For instance, look above at the arrow connecting state 0 to state 1; it bears the label, “8:8, L”. This conditional statement means, “If the tape head reads an 8, replace it with 8, then move the tape head left, then follow the arrow to enter into machine state 1.”
 In addition to the diagram, a Turing Machine requires some preset data on the 'tape' and a specific starting location; this is shown below the diagram in [ brackets].
 In order to use the Python simulator, you must first translate a Turing diagram into the proper structure of states, rules, and tape memory. As a useful example, the following page shows the given example above, along with its translation into Python for this simulator:
-6
+
   
 Example Classic Turing Machine diagram:
 Example Turing Machine diagram translated for the Python simulator:
@@ -92,7 +94,7 @@ TapeMem = [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8] playheadPosition = 1
 I hope that this writeup helps and along with the Turing machine simulator provide a fun and engaging way to further explore the fundamentals of computer science with the most famous of all universal computing architectures, the Turing Machine.
 Sincerely,
 David Hartkop :-)
-7
+
 
 Some example Turing Machines that run in the simulator: 
 
@@ -136,7 +138,7 @@ ControlMem = (\
 ((1, 0, 0, 0), (2, 1, 1, 1), (0, 1, 1, 0), (3, 3, 0, 0)), \
 ((1, 1, 1, 1), (0, 0, 1, 1), (2, 2, 1, 0), (3, 3, 0, 0)), \
 )
-8
+
 
 #Name: Unary to binary converter
 #Description: tallies a row of 1's and writes count in binary. For example:
@@ -169,4 +171,4 @@ ControlMem = (\
 ((),)\
     = 14
  )
-9
+
