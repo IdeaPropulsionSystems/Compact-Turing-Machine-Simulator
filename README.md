@@ -31,6 +31,7 @@ TapeMem = [0, 0, >>>0<<<, 0, 0, 0, 0, 0, 0, 0]
 When setting up the simulator, it is important to set up your TapeMem’s content and the start position. Specify the value and number of all elements in the list TapeMem, and then enter a value for the playheadPosition variable. These values depend entirely on the Turing machine program that is being run. This is an example setup:
 
 TapeMem = [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8] 
+
 playheadPosition = 1
 
 Part 2. Control memory
