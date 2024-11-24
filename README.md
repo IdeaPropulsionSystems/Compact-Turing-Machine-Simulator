@@ -1,6 +1,4 @@
 # Compact-Turing-Machine-Simulator
-Simulate a universal turing machine with this compact python application
-Compact Python Universal Turing Machine Simulator By David Hartkop
 Abstract
 This Python script lets you program and play with your very own Turing Machines. It works well for very simple examples, and allows students to see their results immediately. The simulator, however, is vastly expandable: Using Python 3, there is actually no specific limit to the number of machine states, rules per state, or number of symbols in the alphabet. Your simulation is limited only by the physical system memory on your computer.
 How is the universal Turing Machine represented? Jump to an example on Pg.7, or keep reading for a more thorough explanation:
@@ -96,7 +94,10 @@ Sincerely,
 David Hartkop :-)
 7
 
-Some example Turing Machines that run in the simulator: ----------------------------------------------------------------------
+Some example Turing Machines that run in the simulator: 
+
+----------------------------------------------------------------------
+
 #Name: Blank Turing Machine Template
 #Description: Blank placeholder with a tape of 12 zeros and a control memory of 3 states. The first two states have 3 rules, and the third is a HALT state containing no rules.
 TapeMem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] playheadPosition = 0
@@ -105,6 +106,7 @@ ControlMem = (\
 ((0, 0, 0, 0), (0, 0, 0, 0), (0, 0, 0, 0)), \
 ((),)\
 )
+
 ----------------------------------------------------------------------
 #Name: Simple Zig-Zag
 #Description: Writes zeros and 1s back and forth between a pair of 2s.
@@ -113,7 +115,9 @@ ControlMem = (\
 ((1, 0, 1, 0), (2, 2, 0, 1)), \
 ((0, 1, 0, 1), (2, 2, 1, 0)), \
 )
+
 ----------------------------------------------------------------------
+
 #Name: Number Counting Zig-Zag
 #Description: Writes increasing numbers back and forth between a pair of 8s. When it reaches 4, the program halts.
 TapeMem = [8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8] playheadPosition = 1
@@ -122,7 +126,9 @@ ControlMem = (\
 ((1, 2, 0, 1), (8, 8, 1, 0), (3, 4, 0, 1)), \
 ((),)\
 )
+
 ----------------------------------------------------------------------
+
 #Name: Binary Count-Up
 #Description: Counts up in binary starting with initial zero. The new binary number should be read each time the playhead lands on the number 3.
 TapeMem = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 3] playheadPosition = 10
@@ -142,7 +148,10 @@ TapeMem = [5, 5, 5, 5, 1, 1, 1, 1, 5, 4]
 playheadPosition = 4
 ControlMem = (\
 ((2, 2, 1, 0), (3, 3, 1, 0), (1, 3, 0, 1), (5, 5, 0, 2)), \ ((5, 4, 1, 0), (2, 4, 1, 0), (3, 3, 0, 1), (4, 2, 0, 1)), \ ((3, 3, 0, 2), (2, 0, 0, 2), (4, 1, 0, 2), (5, 5, 0, 3)), \ ((),)\
-) ----------------------------------------------------------------------
+) 
+
+----------------------------------------------------------------------
+
 #Name: Binary numbers adder:
 #Description: Takes in two binary numbers seperated by 2 and writes their sum. For example:
 The two numbers to add are underlined in the start tape condition:
