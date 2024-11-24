@@ -21,13 +21,17 @@ The example shows a 'tape' of 10 elements, and an alphabet of 10 symbols. Turing
 The ’tape memory’ is accessed in a linear fashion by moving the ‘tape head’ to the LEFT or to the RIGHT by one position. For example, let’s say the head is located at tape position TapeMem[3]:
 
 TapeMem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
+
 ....................^
+
 ...................HEAD
 
 If the Turing Machine is directed to move the tape head LEFT, then the tape memory will then be read at TapeMem[2]:
 
 TapeMem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
+
 .................^
+
 ...............HEAD
 
 When setting up the simulator, it is important to set up your TapeMem’s content and the start position. Specify the value and number of all elements in the list TapeMem, and then enter a value for the playheadPosition variable. These values depend entirely on the Turing machine program that is being run. This is an example setup:
