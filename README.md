@@ -1,7 +1,9 @@
 # Compact-Turing-Machine-Simulator
 Abstract
 This Python script lets you program and play with your very own Turing Machines. It works well for very simple examples, and allows students to see their results immediately. The simulator, however, is vastly expandable: Using Python 3, there is actually no specific limit to the number of machine states, rules per state, or number of symbols in the alphabet. Your simulation is limited only by the physical system memory on your computer.
-How is the universal Turing Machine represented? Jump to an example on Pg.7, or keep reading for a more thorough explanation:
+
+How is the universal Turing Machine represented? 
+
 This simulator represents a classic single-tape Turing Machine architecture with the following parts:
 
 1. Tape memory
